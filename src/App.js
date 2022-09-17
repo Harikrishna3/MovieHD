@@ -36,7 +36,10 @@ searchMovies('Spider-Man: No Way Home');
 <div className="app">
 <h1>MovieHD</h1>
 <div className="search">
-<input placeholder="search for movie" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+<input placeholder="search for movie" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} 
+onKeyPress={event => event.key === 'Enter' && searchMovies(searchTerm)}
+/>
+
   <img
   src={SearchIcon}
   alt="search"
